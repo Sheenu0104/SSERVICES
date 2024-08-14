@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .sections-container {
   margin-top: 50px;
   margin-right: 50px;
+  padding: 0 10px; /* Add padding for smaller screens */
 }
 
 .section {
@@ -12,9 +15,33 @@
   width: 100%;
   background-color: #f0f0f0;
   display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
   justify-content: center;
   align-items: center;
   border: 1px solid #ddd;
   margin-bottom: 10px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .sections-container {
+    margin-right: 0; /* Remove right margin on small screens */
+    padding: 0 5px; /* Adjust padding */
+  }
+
+  .section {
+    height: auto; /* Adjust height to fit content */
+    margin-bottom: 15px; /* Increase margin between sections */
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    font-size: 14px; /* Adjust font size for very small screens */
+  }
+
+  .sections-container {
+    padding: 0 2px; /* Further reduce padding on very small screens */
+  }
+}

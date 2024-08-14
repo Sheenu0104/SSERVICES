@@ -24,9 +24,18 @@ const ScrollBar = ({ sectionNames, onSectionClick, highlightedIndex }) => {
     }
   }, [highlightedIndex, sectionNames.length]);
 
+  const handlePrevClick = () => {
+    setScrollIndex(prevIndex => Math.max(prevIndex - 1, 0));
+  };
+
+  const handleNextClick = () => {
+    setScrollIndex(prevIndex => Math.min(prevIndex + 1, sectionNames.length - 5));
+  };
+
   return (
     <div className="scroll-bar">
       <span className="scroll-title">Select Services:</span>
+      <button className="scroll-arrow left" onClick={handlePrevClick}>‹</button>
       <div className="scroll-container" ref={scrollContainerRef}>
         <div className="scroll-content">
           {sectionNames.map((name, index) => (
@@ -42,6 +51,7 @@ const ScrollBar = ({ sectionNames, onSectionClick, highlightedIndex }) => {
           ))}
         </div>
       </div>
+      <button className="scroll-arrow right" onClick={handleNextClick}>›</button>
     </div>
   );
 };
