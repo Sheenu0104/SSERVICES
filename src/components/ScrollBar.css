@@ -1,0 +1,93 @@
+/* src/components/ScrollBar.css */
+
+.scroll-bar {
+    display: flex;
+    align-items: center;
+    position: fixed; /* Fixes the scroll bar at the top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    overflow-x: auto;
+    z-index: 1000; /* Ensure it is above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+    box-sizing: border-box;
+  }
+  
+  .scroll-title {
+    font-weight: bold;
+    margin-right: 15px;
+    white-space: nowrap; /* Keeps the title from wrapping */
+    flex-shrink: 0; /* Prevents shrinking */
+  }
+  
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    flex: 1;
+    margin: 0; /* Adjusted margin */
+    box-sizing: border-box;
+  }
+  
+  .scroll-content {
+    display: flex;
+    align-items: center;
+    min-width: max-content; /* Ensure content does not wrap */
+  }
+  
+  .scroll-item {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+    flex-shrink: 0; /* Prevents shrinking */
+  }
+  
+  .scroll-item:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .scroll-item.highlighted {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .scroll-bar {
+      padding: 8px;
+    }
+  
+    .scroll-title {
+      font-size: 0.9rem; /* Smaller font size on smaller screens */
+      margin-right: 10px;
+    }
+  
+    .scroll-item {
+      padding: 4px 8px;
+      font-size: 0.9rem; /* Smaller font size for scroll items */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .scroll-bar {
+      padding: 6px;
+    }
+  
+    .scroll-title {
+      font-size: 0.8rem; /* Even smaller font size on very small screens */
+      margin-right: 8px;
+    }
+  
+    .scroll-item {
+      padding: 3px 6px;
+      font-size: 0.8rem; /* Smaller font size for scroll items */
+    }
+  }
+  

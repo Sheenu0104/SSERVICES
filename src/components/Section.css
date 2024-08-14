@@ -1,0 +1,20 @@
+/* src/components/Section.css */
+
+.section {
+    padding: 20px; /* Add padding around the section */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    min-height: 700px; /* Set a minimum height for each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+  }
+  
+  .card {
+    height: 100%; /* Ensure cards stretch to fill the section height */
+    margin-bottom: 1rem; /* Add margin at the bottom to separate cards */
+  }
+  
+  .card-body {
+    /* Add custom styles for card body if needed */
+  }
+  

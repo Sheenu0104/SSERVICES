@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.sections-container {
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.section {
+  height: 300px;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
